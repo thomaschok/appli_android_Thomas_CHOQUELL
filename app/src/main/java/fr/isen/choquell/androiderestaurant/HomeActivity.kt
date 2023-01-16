@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-    val action = findViewById<Button>(R.id.buttonEntrée_affichage)
+        val action = findViewById<Button>(R.id.buttonEntrée_affichage)
         action.setOnClickListener() {
-            Snackbar.make(it, "Creeper, OH MAN!!!", Snackbar.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Creeper, OH MAN!!!", Toast.LENGTH_SHORT).show();
         }
 
 
