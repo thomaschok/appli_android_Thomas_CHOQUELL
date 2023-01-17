@@ -1,54 +1,34 @@
 package fr.isen.choquell.androiderestaurant
 
-
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import fr.isen.choquell.androiderestaurant.databinding.ActivityPlatBinding
 
-
 class PlatActivity : AppCompatActivity() {
-    private val listPlat = ArrayList<String>()
-    private lateinit var customAdapter: CustomAdapter
-    private lateinit var binding: ActivityPlatBinding
 
+    private lateinit var binding: ActivityPlatBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityPlatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val salut = intent.getStringExtra("samplename")
-
+        var category = intent.getStringExtra("ActivityName")
         val actionBar = supportActionBar
-        actionBar?.title = salut
+        actionBar?.title = category
 
-        val recyclerView: RecyclerView = findViewById(R.id.mealList)
-        customAdapter = CustomAdapter(prepareItems())
-        val layoutManager = LinearLayoutManager(applicationContext)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = customAdapter
+        val dishes = resources.getStringArray(R.array.plats).toList() as ArrayList<String>
+        binding.mealList.layoutManager = LinearLayoutManager(this)
+        binding.mealList.adapter = CustomAdapter(dishes){
+            val intent = Intent(this,SoupeActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
     }
 
-    private fun prepareItems() : List<String> {
-        val itemsList = arrayListOf<String>()
-        itemsList.add("Item 1")
-        itemsList.add("Item 2")
-        itemsList.add("Item 3")
-        itemsList.add("Item 4")
-        itemsList.add("Item 5")
-        itemsList.add("Item 6")
-        itemsList.add("Item 7")
-        itemsList.add("Item 8")
-        itemsList.add("Item 9")
-        itemsList.add("Item 10")
-        itemsList.add("Item 11")
-        itemsList.add("Item 12")
-        itemsList.add("Item 13")
-        return itemsList
-    }
 }
 
 

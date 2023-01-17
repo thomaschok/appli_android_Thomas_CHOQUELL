@@ -3,8 +3,6 @@ package fr.isen.choquell.androiderestaurant
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import fr.isen.choquell.androiderestaurant.databinding.ActivityHomeBinding
 
@@ -12,12 +10,14 @@ import fr.isen.choquell.androiderestaurant.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
 
 

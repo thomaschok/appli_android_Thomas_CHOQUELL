@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AndroidERestaurant</string>
+    <string name="title_activity_porc">PorcActivity</string>
+
+    <string-array name="plats">
+        <item>Burger italien</item>
+        <item>Burger </item>
+        <item>Burger fr</item>
+    </string-array>
 </resources>
