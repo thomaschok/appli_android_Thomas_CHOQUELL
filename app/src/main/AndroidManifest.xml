@@ -15,7 +15,7 @@
             android:name=".DessertActivity"
             android:exported="false" />
         <activity
-            android:name=".EntreeActivity"
+            android:name=".PlatActivity"
             android:exported="false" />
         <activity
             android:name=".PlatActivity"

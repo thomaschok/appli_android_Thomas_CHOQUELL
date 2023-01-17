@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
     <Button
-        android:id="@+id/buttonDessert_affichage"
+        android:id="@+id/buttonDessertaffichage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
@@ -15,11 +15,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlat_affichage"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlataffichage"
         app:layout_constraintVertical_bias="0.01" />
 
     <Button
-        android:id="@+id/buttonEntrée_affichage"
+        android:id="@+id/buttonStarteraffichage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonPlat_affichage"
+        android:id="@+id/buttonPlataffichage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEntrée_affichage" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonStarteraffichage" />
 
     <ImageView
         android:id="@+id/Logo_imageMinecraft"
@@ -48,5 +48,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/minecraft_logo_vignette" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
