@@ -35,6 +35,11 @@ internal class CustomAdapter(
     override fun getItemCount(): Int {
         return itemsList.size
     }
+
+    fun refreshList(mealFromAPI: ArrayList<String>) {
+        itemsList = mealFromAPI
+        notifyDataSetChanged()
+    }
 }
 
 

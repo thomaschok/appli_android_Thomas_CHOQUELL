@@ -38,21 +38,21 @@ class HomeActivity : AppCompatActivity() {
             Log.d("TAG", "Home est delete")
 
             val intent = Intent(this@HomeActivity, PlatActivity::class.java)
-            intent.putExtra("samplename", "Nether")
+            intent.putExtra("samplename", "Entrées")
             startActivity(intent)
         }
 
 
         binding.buttonPlataffichage.setOnClickListener {
             val intent= Intent(this@HomeActivity, PlatActivity::class.java)
-            intent.putExtra("samplename", "Mineshaft")
+            intent.putExtra("samplename", "Plats")
             startActivity(intent)
         }
 
 
         binding.buttonDessertaffichage.setOnClickListener {
             val intent= Intent(this@HomeActivity, PlatActivity::class.java)
-            intent.putExtra("samplename", "Ender")
+            intent.putExtra("samplename", "Desserts")
             startActivity(intent)
         }
 
@@ -70,8 +70,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
          */
-
-
 
 
     }
