@@ -1,5 +1,6 @@
 package fr.isen.choquell.androiderestaurant
 
+import android.content.ClipData.Item
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import fr.isen.choquell.androiderestaurant.databinding.ActivityPlatBinding
 import fr.isen.choquell.androiderestaurant.model.DataResult
+import fr.isen.choquell.androiderestaurant.model.Items
 import org.json.JSONObject
 
 
@@ -33,14 +35,16 @@ class PlatActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar?.title = namecategory
 
-        val dishes = resources.getStringArray(R.array.plats).toList() as ArrayList<String>
         binding.mealList.layoutManager = LinearLayoutManager(this)
         binding.mealList.adapter = CustomAdapter(arrayListOf()) {
             val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra("detail", it)
             startActivity(intent)
         }
 
         loadDishesFromAPI()
+
+
 
         //GsON()
 
@@ -67,9 +71,9 @@ private fun handleAPIData(data: String) {
     val mealResult = Gson().fromJson(data, DataResult::class.java)
     val mealcategoryfilter = mealResult.data.firstOrNull { it.nameFr == category }
     val adapter = binding.mealList.adapter as CustomAdapter
-    adapter.refreshList(mealcategoryfilter?.items?.map {it.nameFr} as ArrayList<String>)
-
+    adapter.refreshList(mealcategoryfilter?.items as ArrayList<Items>)
 }
+
 
 
 /*
