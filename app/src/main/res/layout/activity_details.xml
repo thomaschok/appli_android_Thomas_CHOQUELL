@@ -11,7 +11,7 @@
         android:id="@+id/DetailsNamePlat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="404dp"
+        android:layout_marginBottom="204dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,16 +27,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DetailsNamePlat" />
+        app:layout_constraintTop_toBottomOf="@+id/DetailsNamePlat"
+        app:layout_constraintVertical_bias="0.275" />
 
-    <TextView
+    <ImageView
         android:id="@+id/detailsImagePlat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/DetailsNamePlat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.594"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="325dp"
+        android:layout_height="164dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

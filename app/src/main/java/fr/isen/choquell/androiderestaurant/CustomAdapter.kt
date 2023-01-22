@@ -35,6 +35,7 @@ internal class CustomAdapter(
             onItemClickListener(item)
         }
 
+
         val price = item.prices[0]
         holder.itemPriceView.text = price.price
         holder.itemPriceView.setOnClickListener {

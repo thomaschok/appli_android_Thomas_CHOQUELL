@@ -21,7 +21,7 @@ class PlatActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPlatBinding
     private lateinit var category: String
-    private lateinit var namecategory: String
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
