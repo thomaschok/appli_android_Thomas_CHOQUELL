@@ -1,11 +1,17 @@
 package fr.isen.choquell.androiderestaurant
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.squareup.picasso.Picasso
 import fr.isen.choquell.androiderestaurant.model.Items
 internal class CustomAdapter(
@@ -15,7 +21,7 @@ internal class CustomAdapter(
     RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
 
 
-    internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var itemTextView: TextView = view.findViewById(R.id.itemtextview)
         var itemPriceView: TextView = view.findViewById(R.id.priceView)
         var itemImageView: ImageView = view.findViewById(R.id.imageView)
@@ -49,6 +55,8 @@ internal class CustomAdapter(
         return itemsList.size
     }
 
+
+
     fun refreshList(mealFromAPI: ArrayList<Items>) {
         itemsList = mealFromAPI
 
@@ -56,8 +64,11 @@ internal class CustomAdapter(
     }
 
 
-
 }
+
+
+
+
 
 
 

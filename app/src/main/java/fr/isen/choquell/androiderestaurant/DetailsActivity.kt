@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso
 import fr.isen.choquell.androiderestaurant.databinding.ActivityDetailsBinding
 import fr.isen.choquell.androiderestaurant.model.Items
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 
 
 @Suppress("DEPRECATION")
@@ -31,6 +32,8 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         name = item.nameFr.toString()
+        //val viewPager = findViewById<ViewPager2>(R.id.viewPager)
+        //viewPager.adapter = MyViewPagerAdapter()
 
 
         val actionBar = supportActionBar
@@ -67,7 +70,7 @@ class DetailsActivity : AppCompatActivity() {
         val number = addition * priceunique!!
         binding.floatingActionButtonPlus.setOnClickListener {
             addition++
-            binding.IncrementaionView.text =
+            binding.incrementaionView.text =
                 Editable.Factory.getInstance().newEditable(addition.toString())
 
             if (item.prices.isNotEmpty()) {
@@ -76,7 +79,7 @@ class DetailsActivity : AppCompatActivity() {
                     priceString.append("$")
                 }
                 val number = addition * priceunique!!
-                binding.TextPriceTotal.text = number.toString()
+                binding.textPriceTotal.text = number.toString()
             }
         }
 
@@ -84,11 +87,11 @@ class DetailsActivity : AppCompatActivity() {
 
         binding.floatingActionButtonMoins.setOnClickListener {
             addition--
-            binding.IncrementaionView.setText(
+            binding.incrementaionView.setText(
                 Editable.Factory.getInstance().newEditable(addition.toString())
             )
             val number = addition * priceunique!!
-            binding.TextPriceTotal.text = number.toString()
+            binding.textPriceTotal.text = number.toString()
         }
 
 
@@ -101,13 +104,12 @@ class DetailsActivity : AppCompatActivity() {
                 priceString.append("$")
                 priceString.append("\n")
             }
-            binding.DdetailsPricePlat.text = priceString
+            binding.detailsPricePlat.text = priceString
 
         }
 
 
     }
-
 
 }
 
