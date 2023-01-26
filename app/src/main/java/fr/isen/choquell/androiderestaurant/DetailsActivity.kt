@@ -1,13 +1,15 @@
 package fr.isen.choquell.androiderestaurant
 
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import android.text.Editable
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import fr.isen.choquell.androiderestaurant.databinding.ActivityDetailsBinding
 import fr.isen.choquell.androiderestaurant.model.Items
+import androidx.viewpager.widget.ViewPager
 
 
 @Suppress("DEPRECATION")
@@ -16,8 +18,12 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var item: Items
     private lateinit var name: String
 
+    //private var number by Delegates.notNull<Double>()
+    private lateinit var viewPager: ViewPager
+    private lateinit var pagerAdapter: CustomAdapter
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
@@ -31,21 +37,80 @@ class DetailsActivity : AppCompatActivity() {
         actionBar?.title = name
 
 
-        val textView = findViewById<TextView>(R.id.DetailsNamePlat)
+        val textView = findViewById<TextView>(R.id.detailsNamePlat)
         val text = name
         textView.text = text
 
         if (item.images.isNotEmpty()) {
-            Picasso.get().load(item.images[0]).into(binding.detailsImagePlat);}
-
-        val ingredients= item.ingredients
-        val ingredientsString = java.lang.StringBuilder()
-        ingredients.forEach{ ingredients -> ingredientsString.append(ingredients.nameFr)
-        ingredientsString.append("\n")
+            Picasso.get().load(item.images[0]).into(binding.DetailsImagePlat);
         }
-    binding.detailsPricePlat.text = ingredientsString
+
+
+        val ingredients = item.ingredients
+
+        if (item.ingredients.isNotEmpty()) {
+            val ingredientsString = java.lang.StringBuilder()
+            ingredients.forEach { ingredients ->
+                ingredientsString.append(ingredients.nameFr)
+                ingredientsString.append("\n")
+            }
+            binding.DetailsIngredientPlat.text = ingredientsString
+
+        }
+
+
+        val prix = item.prices
+        val priceString = java.lang.StringBuilder()
+        val priceunique = item.prices[0].price?.toDouble()
+
+        var addition = 0
+        val number = addition * priceunique!!
+        binding.floatingActionButtonPlus.setOnClickListener {
+            addition++
+            binding.IncrementaionView.text =
+                Editable.Factory.getInstance().newEditable(addition.toString())
+
+            if (item.prices.isNotEmpty()) {
+                prix.forEach { prix ->
+                    priceString.append(prix.price)
+                    priceString.append("$")
+                }
+                val number = addition * priceunique!!
+                binding.TextPriceTotal.text = number.toString()
+            }
+        }
+
+
+
+        binding.floatingActionButtonMoins.setOnClickListener {
+            addition--
+            binding.IncrementaionView.setText(
+                Editable.Factory.getInstance().newEditable(addition.toString())
+            )
+            val number = addition * priceunique!!
+            binding.TextPriceTotal.text = number.toString()
+        }
+
+
+
+
+
+        if (item.prices.isNotEmpty()) {
+            prix.forEach { prix ->
+                priceString.append(prix.price)
+                priceString.append("$")
+                priceString.append("\n")
+            }
+            binding.DdetailsPricePlat.text = priceString
+
+        }
+
+
     }
 
 
 }
+
+
+
 

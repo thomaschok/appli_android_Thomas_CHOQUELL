@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import fr.isen.choquell.androiderestaurant.model.Items
-
 internal class CustomAdapter(
     private var itemsList: ArrayList<Items>,
     val onItemClickListener: (Items) -> Unit
@@ -55,6 +54,9 @@ internal class CustomAdapter(
 
         notifyDataSetChanged()
     }
+
+
+
 }
 
 
