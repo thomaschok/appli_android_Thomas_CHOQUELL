@@ -8,17 +8,30 @@
     android:background="#4CAF50"
     tools:context=".DetailsActivity">
 
-    <TextView
-        android:id="@+id/textPriceTotal"
-        android:layout_width="49dp"
-        android:layout_height="33dp"
-        android:text="Total :"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toEndOf="@+id/incrementaionView"
+        app:layout_constraintTop_toBottomOf="@+id/detailsPricePlat"
+        app:layout_constraintVertical_bias="0.083"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TextView
+        android:id="@+id/DetailsIngredientPlat"
+        android:layout_width="166dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/incrementaionView"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsNamePlat" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButtonMoins"
@@ -28,80 +41,67 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/incrementaionView"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailsPricePlat"
-        app:layout_constraintVertical_bias="0.148"
+        app:layout_constraintVertical_bias="0.083"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <TextView
-        android:id="@+id/DetailsIngredientPlat"
-        android:layout_width="166dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.706"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailsNamePlat" />
-
-    <TextView
         android:id="@+id/detailsNamePlat"
-        android:layout_width="219dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="240dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintHorizontal_bias="0.614"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DetailsImagePlat" />
-
-    <TextView
-        android:id="@+id/detailsPricePlat"
-        android:layout_width="103dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="40dp"
-        android:text="TextView "
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.587"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DetailsIngredientPlat" />
 
     <ImageView
         android:id="@+id/DetailsImagePlat"
         android:layout_width="372dp"
         android:layout_height="186dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintHorizontal_bias="0.256"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButtonPlus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:clickable="true"
+    <TextView
+        android:id="@+id/detailsPricePlat"
+        android:layout_width="103dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DetailsIngredientPlat" />
+
+    <TextView
+        android:id="@+id/textPriceTotal"
+        android:layout_width="49dp"
+        android:layout_height="33dp"
+        android:text="Total :"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toEndOf="@+id/incrementaionView"
-        app:layout_constraintTop_toBottomOf="@+id/detailsPricePlat"
-        app:layout_constraintVertical_bias="0.148"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incrementaionView"
+        app:layout_constraintVertical_bias="0.153" />
 
     <TextView
         android:id="@+id/incrementaionView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="40dp"
         android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailsPricePlat" />
 

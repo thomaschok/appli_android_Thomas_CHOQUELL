@@ -2,6 +2,7 @@ package fr.isen.choquell.androiderestaurant
 
 
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -11,6 +12,7 @@ import fr.isen.choquell.androiderestaurant.databinding.ActivityDetailsBinding
 import fr.isen.choquell.androiderestaurant.model.Items
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import org.json.JSONObject
 import java.io.File
 import java.lang.StringBuilder
 
@@ -34,8 +36,6 @@ class DetailsActivity : AppCompatActivity() {
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         name = item.nameFr.toString()
-        //val viewPager = findViewById<ViewPager2>(R.id.viewPager)
-        //viewPager.adapter = MyViewPagerAdapter()
 
 
         val actionBar = supportActionBar
@@ -68,6 +68,7 @@ class DetailsActivity : AppCompatActivity() {
         val priceString = StringBuilder()
         val priceunique = item.prices[0].price?.toDouble()
 
+
         var addition = 0
         val number = addition * priceunique!!
         binding.floatingActionButtonPlus.setOnClickListener {
@@ -83,6 +84,14 @@ class DetailsActivity : AppCompatActivity() {
                 val number = addition * priceunique!!
                 binding.textPriceTotal.text = number.toString()
             }
+
+
+            val data = JSONObject()
+            data.put("prix", number)
+
+            val fileOutputStream = openFileOutput("pannier.json", Context.MODE_PRIVATE)
+            fileOutputStream.write(data.toString().toByteArray())
+            fileOutputStream.close()
         }
 
 
@@ -109,8 +118,11 @@ class DetailsActivity : AppCompatActivity() {
             binding.detailsPricePlat.text = priceString
 
         }
-        
+
     }
+
+
+
 
 }
 
