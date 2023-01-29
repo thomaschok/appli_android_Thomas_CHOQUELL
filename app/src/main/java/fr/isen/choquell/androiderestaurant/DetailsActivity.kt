@@ -11,6 +11,8 @@ import fr.isen.choquell.androiderestaurant.databinding.ActivityDetailsBinding
 import fr.isen.choquell.androiderestaurant.model.Items
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import java.io.File
+import java.lang.StringBuilder
 
 
 @Suppress("DEPRECATION")
@@ -52,7 +54,7 @@ class DetailsActivity : AppCompatActivity() {
         val ingredients = item.ingredients
 
         if (item.ingredients.isNotEmpty()) {
-            val ingredientsString = java.lang.StringBuilder()
+            val ingredientsString = StringBuilder()
             ingredients.forEach { ingredients ->
                 ingredientsString.append(ingredients.nameFr)
                 ingredientsString.append("\n")
@@ -63,7 +65,7 @@ class DetailsActivity : AppCompatActivity() {
 
 
         val prix = item.prices
-        val priceString = java.lang.StringBuilder()
+        val priceString = StringBuilder()
         val priceunique = item.prices[0].price?.toDouble()
 
         var addition = 0
@@ -107,8 +109,7 @@ class DetailsActivity : AppCompatActivity() {
             binding.detailsPricePlat.text = priceString
 
         }
-
-
+        
     }
 
 }

@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
 
 
         val actionBar = supportActionBar
-        actionBar!!.title = "World"
+        actionBar!!.title = "Minecraft Restaurant "
 
 
         /*

@@ -4,25 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#333333"
+    android:hapticFeedbackEnabled="false"
     tools:context=".HomeActivity">
 
     <Button
         android:id="@+id/buttonDessertaffichage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="253dp"
+        android:layout_height="64dp"
         android:layout_marginTop="96dp"
+        android:backgroundTint="#4CAF50"
         android:text="Dessert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonPlataffichage"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonStarteraffichage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="246dp"
+        android:layout_height="68dp"
         android:layout_marginTop="220dp"
+        android:backgroundTint="#4CAF50"
         android:text="Entrée"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
@@ -31,21 +35,25 @@
 
     <Button
         android:id="@+id/buttonPlataffichage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_width="245dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="4dp"
+        android:backgroundTint="#4CAF50"
         android:text="Plat"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonStarteraffichage" />
 
     <ImageView
-        android:id="@+id/Logo_imageMinecraft"
-        android:layout_width="125dp"
-        android:layout_height="112dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/imageView3"
+        android:layout_width="413dp"
+        android:layout_height="170dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonStarteraffichage"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minecraft_logo_vignette" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/copie_de_ajouter_un_titre_2022_10_18t111045_835" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

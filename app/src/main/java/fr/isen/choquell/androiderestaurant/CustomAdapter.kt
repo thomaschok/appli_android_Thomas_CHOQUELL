@@ -47,7 +47,7 @@ internal class CustomAdapter(
             onItemClickListener(item)
         }
         if (item.images[0].isNotEmpty()) {
-            Picasso.get().load(item.images[0]).into(holder.itemImageView);}
+                Picasso.get().load(item.images[0]).into(holder.itemImageView);}
 
     }
 
