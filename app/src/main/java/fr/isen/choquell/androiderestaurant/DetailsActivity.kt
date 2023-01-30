@@ -12,6 +12,7 @@ import fr.isen.choquell.androiderestaurant.databinding.ActivityDetailsBinding
 import fr.isen.choquell.androiderestaurant.model.Items
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.snackbar.Snackbar
 import org.json.JSONObject
 import java.io.File
 import java.lang.StringBuilder
@@ -83,15 +84,20 @@ class DetailsActivity : AppCompatActivity() {
                 }
                 val number = addition * priceunique!!
                 binding.textPriceTotal.text = number.toString()
+
+                val data = JSONObject()
+                data.put("nom", name)
+                data.put("quantité", addition)
+                data.put("prix total", number)
+
+
+                val fileOutputStream = openFileOutput("pannier.json", Context.MODE_PRIVATE)
+                fileOutputStream.write(data.toString().toByteArray())
+                Snackbar.make(it, "Panier enregistré", Snackbar.LENGTH_SHORT).show()
+                fileOutputStream.close()
             }
 
 
-            val data = JSONObject()
-            data.put("prix", number)
-
-            val fileOutputStream = openFileOutput("pannier.json", Context.MODE_PRIVATE)
-            fileOutputStream.write(data.toString().toByteArray())
-            fileOutputStream.close()
         }
 
 
@@ -103,6 +109,13 @@ class DetailsActivity : AppCompatActivity() {
             )
             val number = addition * priceunique!!
             binding.textPriceTotal.text = number.toString()
+
+            val data = JSONObject()
+            data.put("prix", number)
+
+            val fileOutputStream = openFileOutput("pannier.json", Context.MODE_PRIVATE)
+            fileOutputStream.write(data.toString().toByteArray())
+            Snackbar.make(it, "Panier enregistré", Snackbar.LENGTH_SHORT).show()
         }
 
 
@@ -120,8 +133,6 @@ class DetailsActivity : AppCompatActivity() {
         }
 
     }
-
-
 
 
 }
