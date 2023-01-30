@@ -6,6 +6,8 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import fr.isen.choquell.androiderestaurant.databinding.ActivityDetailsBinding
@@ -131,6 +133,7 @@ class DetailsActivity : AppCompatActivity() {
             binding.detailsPricePlat.text = priceString
 
         }
+
 
     }
 
